@@ -18,7 +18,8 @@ namespace Section4_MultitThreading_Test
             empDetails.Add(new EmpDetails("Nita", "School", "steert", "Teacher"));
 
             Employeepayroll employeepayroll= new Employeepayroll();
-            employeepayroll.addEmployeeToPayRoll(empDetails);   
+           // employeepayroll.addEmployeeToPayRoll(empDetails);   
+           employeepayroll.addEmployeeToPayRollListWithThread(empDetails);
         }
     }
 }

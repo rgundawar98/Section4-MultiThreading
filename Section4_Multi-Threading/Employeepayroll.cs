@@ -24,5 +24,18 @@ namespace Section4_Multi_Threading
         {
             EmployeeDetails.Add(employeedetail);
         }
+
+        public void addEmployeeToPayRollListWithThread(List<EmpDetails> EmployeeDetails)
+        {
+            EmployeeDetails.ForEach(empData =>
+            {
+                Task thread = new Task(() =>
+                {
+                    Console.WriteLine("Employee being added:" + empData.Name);
+                    this.addEmployeeToPayRoll(empData);
+                    Console.WriteLine("Employee added:" + empData.Name);
+                });
+            });
+        }
     }
 }
